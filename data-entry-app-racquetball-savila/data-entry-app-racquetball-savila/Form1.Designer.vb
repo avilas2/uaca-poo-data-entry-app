@@ -33,6 +33,8 @@ Partial Class Form1
         Me.lb_userSkill = New System.Windows.Forms.Label()
         Me.txt_userSkill = New System.Windows.Forms.TextBox()
         Me.btn_userSubmit = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txt_userid
@@ -124,11 +126,24 @@ Partial Class Form1
         Me.btn_userSubmit.Text = "Submit"
         Me.btn_userSubmit.UseVisualStyleBackColor = True
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(37, 239)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(820, 408)
+        Me.DataGridView1.TabIndex = 11
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(897, 685)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btn_userSubmit)
         Me.Controls.Add(Me.lb_userSkill)
         Me.Controls.Add(Me.txt_userSkill)
@@ -142,6 +157,7 @@ Partial Class Form1
         Me.Controls.Add(Me.txt_userid)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -158,4 +174,5 @@ Partial Class Form1
     Friend WithEvents lb_userSkill As Label
     Friend WithEvents txt_userSkill As TextBox
     Friend WithEvents btn_userSubmit As Button
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

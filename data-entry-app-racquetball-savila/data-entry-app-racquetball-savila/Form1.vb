@@ -26,11 +26,26 @@ Public Class Form1
     Private Sub btn_userSubmit_Click(sender As Object, e As EventArgs) Handles btn_userSubmit.Click
         Try
             conn.Open()
-            MsgBox("Connected...executing query")
         Catch ex As Exception
         End Try
-        Dim cmd As New MySqlCommand(String.Format("INSERT INTO users(user_id, user_firstName, user_lastName, user_age, user_skill) VALUES ('{0}','{1}','{2}',{3},'{4}')", txt_userid.Text, txt_userFirstName.Text, txt_userLastName.Text, txt_userAge.Text, txt_userSkill.Text), conn)
+        Dim cmd As New MySqlCommand(String.Format("CALL createUser('{0}','{1}','{2}','{3}','{4}')", txt_userid.Text, txt_userFirstName.Text, txt_userLastName.Text, txt_userAge.Text, txt_userSkill.Text), conn)
         cmd.ExecuteNonQuery()
         conn.Close()
+
+        getUsers()
+    End Sub
+
+    Public Sub getUsers()
+        Dim query As String = "SELECT * FROM users"
+        Dim daUsers As New MySqlDataAdapter(query, conn)
+        Dim dsUsers As New DataSet()
+
+        If daUsers.Fill(dsUsers) Then
+            DataGridView1.DataSource = dsUsers.Tables(0)
+        End If
+
+        conn.Close()
+
+
     End Sub
 End Class
