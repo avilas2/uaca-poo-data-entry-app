@@ -34,6 +34,10 @@ Partial Class Form1
         Me.txt_userSkill = New System.Windows.Forms.TextBox()
         Me.btn_userSubmit = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btn_exportXML = New System.Windows.Forms.Button()
+        Me.btn_getUsers = New System.Windows.Forms.Button()
+        Me.btn_exportCSV = New System.Windows.Forms.Button()
+        Me.btn_exportXLSX = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -138,11 +142,51 @@ Partial Class Form1
         Me.DataGridView1.Size = New System.Drawing.Size(820, 408)
         Me.DataGridView1.TabIndex = 11
         '
+        'btn_exportXML
+        '
+        Me.btn_exportXML.Location = New System.Drawing.Point(782, 210)
+        Me.btn_exportXML.Name = "btn_exportXML"
+        Me.btn_exportXML.Size = New System.Drawing.Size(75, 23)
+        Me.btn_exportXML.TabIndex = 12
+        Me.btn_exportXML.Text = "XML"
+        Me.btn_exportXML.UseVisualStyleBackColor = True
+        '
+        'btn_getUsers
+        '
+        Me.btn_getUsers.Location = New System.Drawing.Point(40, 210)
+        Me.btn_getUsers.Name = "btn_getUsers"
+        Me.btn_getUsers.Size = New System.Drawing.Size(110, 23)
+        Me.btn_getUsers.TabIndex = 13
+        Me.btn_getUsers.Text = "Get Users"
+        Me.btn_getUsers.UseVisualStyleBackColor = True
+        '
+        'btn_exportCSV
+        '
+        Me.btn_exportCSV.Location = New System.Drawing.Point(701, 210)
+        Me.btn_exportCSV.Name = "btn_exportCSV"
+        Me.btn_exportCSV.Size = New System.Drawing.Size(75, 23)
+        Me.btn_exportCSV.TabIndex = 14
+        Me.btn_exportCSV.Text = "CSV"
+        Me.btn_exportCSV.UseVisualStyleBackColor = True
+        '
+        'btn_exportXLSX
+        '
+        Me.btn_exportXLSX.Location = New System.Drawing.Point(620, 210)
+        Me.btn_exportXLSX.Name = "btn_exportXLSX"
+        Me.btn_exportXLSX.Size = New System.Drawing.Size(75, 23)
+        Me.btn_exportXLSX.TabIndex = 15
+        Me.btn_exportXLSX.Text = "Excel"
+        Me.btn_exportXLSX.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(897, 685)
+        Me.Controls.Add(Me.btn_exportXLSX)
+        Me.Controls.Add(Me.btn_exportCSV)
+        Me.Controls.Add(Me.btn_getUsers)
+        Me.Controls.Add(Me.btn_exportXML)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btn_userSubmit)
         Me.Controls.Add(Me.lb_userSkill)
@@ -175,4 +219,8 @@ Partial Class Form1
     Friend WithEvents txt_userSkill As TextBox
     Friend WithEvents btn_userSubmit As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents btn_exportXML As Button
+    Friend WithEvents btn_getUsers As Button
+    Friend WithEvents btn_exportCSV As Button
+    Friend WithEvents btn_exportXLSX As Button
 End Class
